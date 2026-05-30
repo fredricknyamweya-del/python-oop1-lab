@@ -24,6 +24,16 @@ class Book:
         """
         return self._page_count
 
+    @page_count.setter
+    def page_count(self, value):
+        """
+        Set the page count if it is an integer, otherwise print an error.
+        """
+        if isinstance(value, int):
+            self._page_count = value
+        else:
+            print("page_count must be an integer")
+
     def turn_page(self):
         """
         Simulate turning a page in the book.
@@ -42,3 +52,4 @@ if __name__ == "__main__":
     # Invalid page_count example
     book2 = Book("Bad Data Book", "two hundred")
     print(f"Book Title: {book2.title}, Pages: {book2.page_count}")
+    

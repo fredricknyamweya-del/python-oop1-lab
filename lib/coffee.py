@@ -20,6 +20,14 @@ class Coffee:
         """Return the size of the coffee."""
         return self._size
 
+    @size.setter
+    def size(self, value):
+        """Set the size if it is one of the allowed options, otherwise print an error."""
+        if value in ["Small", "Medium", "Large"]:
+            self._size = value
+        else:
+            print("size must be Small, Medium, or Large")
+
     def tip(self):
         """Simulate tipping for the coffee and increase price by 1."""
         print("This coffee is great, here’s a tip!")
